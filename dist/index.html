@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Drone Stream</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <script src="/dist/nodecopter-client.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/dist/canvascontrols.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+	html, body, #droneStream, canvas {
+			width: 100%;
+			height: 100%;
+	    }
+	html, body {
+        font-family: "Open Sans";
+        font-weight: 300;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+        #droneStream{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left:0;
+            right: 0;
+            z-index: -1;
+        }
+        #droneControls{
+            position: relative;
+            padding: 10px;
+        }
+        #droneControls div{
+            display:inline-block;
+            padding: 10px;
+        }
+        a, a:link, a:active, a:hover, a:visited{color:white;text-decoration: none;font-weight: 400;border-bottom: solid 2px rgba(255,255,255,0.85)}
+        a:hover{border-bottom: solid 2px rgba(190,190,190,0.85)}
+        h1, h2, h3, h4, h5{margin: 0;}
+        *{
+            text-shadow: 0px 0px 10px black, 1px 1px 2px black;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="droneStream"></div>
+    <script type="text/javascript" charset="utf-8">
+        new NodecopterStream(document.getElementById("droneStream"));
+    </script>
+    <div id="droneControls">
+        <div>
+            <h1><span data="drone-id">AR Drone 2.0</span></h1>
+            <h4><span data="camera-id">Camera 1</span></h4>
+        </div>
+        <div style="float:right;text-align: right">
+            <h2>Battery</h2>
+            <h4><strong><span data="battery-percentage">100%</span></strong> (<span data="battery-timeduration">1 hour</span>)</h4>
+            <br/>
+            <h2>Distance</h2>
+            <h4><strong><span data="altitude-distance">0m</span></strong></h4>
+            <h2>Activity</h2>
+            <h4><strong><span data="drone-process">Idle</span></strong></h4>
+            <p><a href="javascript:void(0);" onclick="runSimpleTest()">Run Simple Test</a></p>
+            <p><a href="javascript:void(0);" onclick="runAdvancedTest()">Run Advanced Test</a></p>
+            <p><a href="javascript:void(0);" onclick="cancelTask()">Abort Task</a></p>
+            <p><a href="javascript:void(0);" onclick="cancelTaskAndLand()">Abort Task & Land</a></p>
+            <p><a href="javascript:void(0);" onclick="shutdown()">Abort Application</a></p>
+        </div>
+        <div style="position: fixed; bottom: 0;left:0;right: 0;width: 100%;">
+
+        </div>
+    </div>
+
+</body>
+</html>

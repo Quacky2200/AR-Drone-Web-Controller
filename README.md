@@ -5,10 +5,10 @@ Implement and control your drone right from your browser along with a realtime l
 Implemented as part of [node-dronestream](https://github.com/bkw/node-dronestream) and [ar-drone](https://github.com/felixge/node-ar-drone) Node.JS repos. Please read these repo's 
 so that you can add more functionality to your drone as part of this implementation.
 
-## N.B. The index.js file is where most of this implementation is, because of the situation when the
-## repo was built, the index.js file was never split into a better layout with multiple files. Instead, 
-## the index.js file contains a large amount of code. (If this project gets updated, this will be one
-## of the first things to change).
+**N.B. The index.js file is where most of this implementation is, because of the situation when the
+repo was built, the index.js file was never split into a better layout with multiple files. Instead, 
+the index.js file contains a large amount of code. (If this project gets updated, this will be one
+of the first things to change). **
 
 ## How it works
    ## The video feed
